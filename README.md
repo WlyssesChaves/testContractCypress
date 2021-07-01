@@ -1,5 +1,5 @@
-# Teste de contrato com Cypress + Ajv
-Apenas uma POC para a execução de testes de contrado com Cypress + Ajv
+# Teste de contrato com Cypress + Ajv e Retrocompatibilidade com Cypress + SwaggerDiff
+Apenas uma POC para a execução de testes de contrado com Cypress + Ajv e testes de retrocompatibilidade com Cypress + SwaggerDiff
 
 # Para executar os testes, siga os passos abaixo:
 1. Clone o projeto
