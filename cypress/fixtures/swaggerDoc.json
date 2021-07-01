@@ -930,6 +930,10 @@
                 "type":"string",
                 "example":"doggie"
              },
+             "tipo":{
+                "type":"number",
+                "example":"doggie"
+             },
              "photoUrls":{
                 "type":"array",
                 "xml":{
