@@ -1,29 +1,25 @@
-import Ajv from "ajv"
-const ajv = new Ajv({allErrors: true})
-
-Cypress.Commands.add('validaContrato', schema => {    
-        cy.request({
-            method: 'GET',
-            url: '/findByStatus',
-            qs: { status: 'pending' }
-        }).then((response) => { 
-            const validate = ajv.compile(schema)           
-            const valid = validate(response.body)
-            if(!valid)
-            {     
-                //Insere resultados em um array para exibir                
-                let erros = []
-                validate.errors.forEach(erro => {
-                erros.push('\n' + 'Mensagem: ' + erro.message + '\n' + 'schemaPath: ' + erro.schemaPath)
-                });
-                cy.log(validate.errors).then(() => {  
-                    throw new Error('Erros encontrados na validação dos esquemas: ' + erros)                                                 
-                });  
-            }                    
-            else
-            {
-                expect(valid).to.be.true
-                cy.log('Schema válido!')
-            }                       
-        });        
-})
+// ***********************************************
+// This example commands.js shows you how to
+// create various custom commands and overwrite
+// existing commands.
+//
+// For more comprehensive examples of custom
+// commands please read more here:
+// https://on.cypress.io/custom-commands
+// ***********************************************
+//
+//
+// -- This is a parent command --
+// Cypress.Commands.add("login", (email, password) => { ... })
+//
+//
+// -- This is a child command --
+// Cypress.Commands.add("drag", { prevSubject: 'element'}, (subject, options) => { ... })
+//
+//
+// -- This is a dual command --
+// Cypress.Commands.add("dismiss", { prevSubject: 'optional'}, (subject, options) => { ... })
+//
+//
+// -- This will overwrite an existing command --
+// Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })

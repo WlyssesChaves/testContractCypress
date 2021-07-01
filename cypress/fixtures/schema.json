@@ -1,14 +1,40 @@
 {
-    "$schema": "http://json-schema.org/schema#",
-    "title": "Root",
-    "type": "array",
-    "items": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "number"
+  "$schema": "http://json-schema.org/schema#",
+  "title": "Root",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "number"
+      },
+      "category": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          }
         },
-        "category": {
+        "required": [
+          "id",
+          "name"
+        ]
+      },
+      "name": {
+        "type": "string"
+      },
+      "photoUrls": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "tags": {
+        "type": "array",
+        "items": {
           "type": "object",
           "properties": {
             "id": {
@@ -22,45 +48,18 @@
             "id",
             "name"
           ]
-        },
-        "name": {
-          "type": "string"
-        },
-        "photoUrls": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "tags": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "number"
-              },
-              "name": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "id",
-              "name"
-            ]
-          }
-        },
-        "status": {
-          "type": "string"
         }
       },
-      "required": [
-        "id",
-        "category",
-        "name",
-        "photoUrls",
-        "tags",
-        "status"
-      ]
-    }
+      "status": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "id",
+      "category",
+      "photoUrls",
+      "tags",
+      "status"
+    ]
   }
+}

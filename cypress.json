@@ -1,3 +1,6 @@
 {
-    "baseUrl": "https://petstore.swagger.io/v2/pet"
+    "baseUrl": "https://petstore.swagger.io/v2/pet",
+    "env": {
+        "urlSwagger":"https://petstore.swagger.io/v2/swagger.json"
+      }
 }
