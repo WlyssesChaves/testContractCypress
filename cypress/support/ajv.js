@@ -1,14 +1,10 @@
 import Ajv from "ajv"
 const ajv = new Ajv({allErrors: true})
 
-Cypress.Commands.add('validaContrato', schema => {    
-        cy.request({
-            method: 'GET',
-            url: '/findByStatus',
-            qs: { status: 'pending' }
-        }).then((response) => { 
+Cypress.Commands.add('validaContrato', (schema, res) => {    
+ 
             const validate = ajv.compile(schema)           
-            const valid = validate(response.body)
+            const valid = validate(res.body)
             if(!valid)
             {     
                 //Insere resultados em um array para exibir                
@@ -24,6 +20,5 @@ Cypress.Commands.add('validaContrato', schema => {
             {
                 expect(valid).to.be.true
                 cy.log('Schema válido!')
-            }                       
-        });        
+            }                               
 })
